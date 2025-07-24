@@ -1,6 +1,5 @@
-workspace = { members = ["matrix_transposition"] }
 [package]
-name = "fibonacci2"
+name = "matrix_transposition"
 version = "0.1.0"
 edition = "2021"
 
