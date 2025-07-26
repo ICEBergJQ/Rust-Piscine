@@ -50,10 +50,15 @@ pub fn do_operations(v: &mut [String]) {
                 break;
             }
         }
-       let mut spl = e.split(op);
+        let mut spl = e.split(op);
         let lhs = spl.next().unwrap().parse::<i32>().unwrap();
         let rhs = spl.next().unwrap().parse::<i32>().unwrap();
-        res.push((lhs + rhs).to_string());
+        let result = match op {
+            '+' => lhs + rhs,
+            '-' => lhs - rhs,
+            _ => unreachable!(),
+        };
+        res.push((result).to_string());
     }
 
     for (i, val) in res.into_iter().enumerate() {
