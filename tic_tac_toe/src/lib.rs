@@ -17,8 +17,8 @@ pub fn tic_tac_toe(table: [[char; 3]; 3]) -> String {
 }
 
 pub fn diagonals(player: char, table: &[[char; 3]; 3]) -> bool {
-    let mut main_diag = (0..3).all(|i| table[i][i] == player);
-    let mut anti_diag = (0..3).all(|i| table[i][2 - i] == player);
+    let main_diag = (0..3).all(|i| table[i][i] == player);
+    let anti_diag = (0..3).all(|i| table[i][2 - i] == player);
     main_diag || anti_diag
 }
 
