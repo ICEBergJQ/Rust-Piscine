@@ -1,7 +1,7 @@
 pub fn check_ms(message: &str) -> Result<&str, &str> {
     if message.contains("stupid") {
-        Err("Message contains profanity")
+        Err("ERROR: illegal")
     } else {
-        Ok("ERROR: illegal")
+        Ok(message)
     }
 }
