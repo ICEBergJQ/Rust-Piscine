@@ -8,7 +8,7 @@ pub struct Color {
 
 impl Color {
     pub fn swap(mut self, first: u8, second: u8) -> Color {
-        let channels = [&mut self.r, &mut self.g, &mut self.b, &mut self.a];
+        let mut channels = [&mut self.r, &mut self.g, &mut self.b, &mut self.a];
 
         for channel in channels.iter_mut() {
             if **channel == first {
