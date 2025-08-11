@@ -1,6 +1,6 @@
 #[derive(Clone, Debug)]
 pub struct List<T> {
-    pub head: Option<Node<T>>,
+    pub head: Option<Box<Node<T>>>,
 }
 
 #[derive(Clone, Debug)]
@@ -10,7 +10,7 @@ pub struct Node<T> {
 }
 
 impl<T> List<T> {
-    pub fn new() -> Self {
+    pub fn new() -> List<T> {
         List { head: None }
     }
 
@@ -31,7 +31,6 @@ impl<T> List<T> {
     pub fn len(&self) -> usize {
         let mut count = 0;
         let mut current = &self.head;
-
         while let Some(node) = current {
             count += 1;
             current = &node.next;
